@@ -2,14 +2,14 @@
 // source: github.com/ilovelili/dongfeng-physique/services/proto/api.proto
 
 /*
-Package dongfeng_svc_attendance_server is a generated protocol buffer package.
+Package dongfeng_svc_physique_server is a generated protocol buffer package.
 
 It is generated from these files:
 	github.com/ilovelili/dongfeng-physique/services/proto/api.proto
 
 It has these top-level messages:
 */
-package dongfeng_svc_attendance_server
+package dongfeng_svc_physique_server
 
 import proto "github.com/golang/protobuf/proto"
 import fmt "fmt"
@@ -17,17 +17,16 @@ import math "math"
 import dongfeng_protobuf "github.com/ilovelili/dongfeng-protobuf"
 
 import (
-	context "context"
-
 	client "github.com/micro/go-micro/client"
 	server "github.com/micro/go-micro/server"
+	context "context"
 )
 
 // Reference imports to suppress errors if they are not otherwise used.
 var _ = proto.Marshal
 var _ = fmt.Errorf
 var _ = math.Inf
-var _ = dongfeng_protobuf.UpdateAttendanceResponse{}
+var _ = dongfeng_protobuf.UpdatePhysiqueResponse{}
 
 // This is a compile-time assertion to ensure that this generated file
 // is compatible with the proto package it is being compiled against.
@@ -43,8 +42,8 @@ var _ server.Option
 // Client API for Api service
 
 type ApiService interface {
-	GetAttendance(ctx context.Context, in *dongfeng_protobuf.GetAttendanceRequest, opts ...client.CallOption) (*dongfeng_protobuf.GetAttendanceResponse, error)
-	UpdateAttendance(ctx context.Context, in *dongfeng_protobuf.UpdateAttendanceRequest, opts ...client.CallOption) (*dongfeng_protobuf.UpdateAttendanceResponse, error)
+	GetPhysique(ctx context.Context, in *dongfeng_protobuf.GetPhysiqueRequest, opts ...client.CallOption) (*dongfeng_protobuf.GetPhysiqueResponse, error)
+	UpdatePhysique(ctx context.Context, in *dongfeng_protobuf.UpdatePhysiqueRequest, opts ...client.CallOption) (*dongfeng_protobuf.UpdatePhysiqueResponse, error)
 }
 
 type apiService struct {
@@ -57,7 +56,7 @@ func NewApiService(name string, c client.Client) ApiService {
 		c = client.NewClient()
 	}
 	if len(name) == 0 {
-		name = "dongfeng.svc.attendance.server"
+		name = "dongfeng.svc.physique.server"
 	}
 	return &apiService{
 		c:    c,
@@ -65,9 +64,9 @@ func NewApiService(name string, c client.Client) ApiService {
 	}
 }
 
-func (c *apiService) GetAttendance(ctx context.Context, in *dongfeng_protobuf.GetAttendanceRequest, opts ...client.CallOption) (*dongfeng_protobuf.GetAttendanceResponse, error) {
-	req := c.c.NewRequest(c.name, "Api.GetAttendance", in)
-	out := new(dongfeng_protobuf.GetAttendanceResponse)
+func (c *apiService) GetPhysique(ctx context.Context, in *dongfeng_protobuf.GetPhysiqueRequest, opts ...client.CallOption) (*dongfeng_protobuf.GetPhysiqueResponse, error) {
+	req := c.c.NewRequest(c.name, "Api.GetPhysique", in)
+	out := new(dongfeng_protobuf.GetPhysiqueResponse)
 	err := c.c.Call(ctx, req, out, opts...)
 	if err != nil {
 		return nil, err
@@ -75,9 +74,9 @@ func (c *apiService) GetAttendance(ctx context.Context, in *dongfeng_protobuf.Ge
 	return out, nil
 }
 
-func (c *apiService) UpdateAttendance(ctx context.Context, in *dongfeng_protobuf.UpdateAttendanceRequest, opts ...client.CallOption) (*dongfeng_protobuf.UpdateAttendanceResponse, error) {
-	req := c.c.NewRequest(c.name, "Api.UpdateAttendance", in)
-	out := new(dongfeng_protobuf.UpdateAttendanceResponse)
+func (c *apiService) UpdatePhysique(ctx context.Context, in *dongfeng_protobuf.UpdatePhysiqueRequest, opts ...client.CallOption) (*dongfeng_protobuf.UpdatePhysiqueResponse, error) {
+	req := c.c.NewRequest(c.name, "Api.UpdatePhysique", in)
+	out := new(dongfeng_protobuf.UpdatePhysiqueResponse)
 	err := c.c.Call(ctx, req, out, opts...)
 	if err != nil {
 		return nil, err
@@ -88,14 +87,14 @@ func (c *apiService) UpdateAttendance(ctx context.Context, in *dongfeng_protobuf
 // Server API for Api service
 
 type ApiHandler interface {
-	GetAttendance(context.Context, *dongfeng_protobuf.GetAttendanceRequest, *dongfeng_protobuf.GetAttendanceResponse) error
-	UpdateAttendance(context.Context, *dongfeng_protobuf.UpdateAttendanceRequest, *dongfeng_protobuf.UpdateAttendanceResponse) error
+	GetPhysique(context.Context, *dongfeng_protobuf.GetPhysiqueRequest, *dongfeng_protobuf.GetPhysiqueResponse) error
+	UpdatePhysique(context.Context, *dongfeng_protobuf.UpdatePhysiqueRequest, *dongfeng_protobuf.UpdatePhysiqueResponse) error
 }
 
 func RegisterApiHandler(s server.Server, hdlr ApiHandler, opts ...server.HandlerOption) {
 	type api interface {
-		GetAttendance(ctx context.Context, in *dongfeng_protobuf.GetAttendanceRequest, out *dongfeng_protobuf.GetAttendanceResponse) error
-		UpdateAttendance(ctx context.Context, in *dongfeng_protobuf.UpdateAttendanceRequest, out *dongfeng_protobuf.UpdateAttendanceResponse) error
+		GetPhysique(ctx context.Context, in *dongfeng_protobuf.GetPhysiqueRequest, out *dongfeng_protobuf.GetPhysiqueResponse) error
+		UpdatePhysique(ctx context.Context, in *dongfeng_protobuf.UpdatePhysiqueRequest, out *dongfeng_protobuf.UpdatePhysiqueResponse) error
 	}
 	type Api struct {
 		api
@@ -108,10 +107,10 @@ type apiHandler struct {
 	ApiHandler
 }
 
-func (h *apiHandler) GetAttendance(ctx context.Context, in *dongfeng_protobuf.GetAttendanceRequest, out *dongfeng_protobuf.GetAttendanceResponse) error {
-	return h.ApiHandler.GetAttendance(ctx, in, out)
+func (h *apiHandler) GetPhysique(ctx context.Context, in *dongfeng_protobuf.GetPhysiqueRequest, out *dongfeng_protobuf.GetPhysiqueResponse) error {
+	return h.ApiHandler.GetPhysique(ctx, in, out)
 }
 
-func (h *apiHandler) UpdateAttendance(ctx context.Context, in *dongfeng_protobuf.UpdateAttendanceRequest, out *dongfeng_protobuf.UpdateAttendanceResponse) error {
-	return h.ApiHandler.UpdateAttendance(ctx, in, out)
+func (h *apiHandler) UpdatePhysique(ctx context.Context, in *dongfeng_protobuf.UpdatePhysiqueRequest, out *dongfeng_protobuf.UpdatePhysiqueResponse) error {
+	return h.ApiHandler.UpdatePhysique(ctx, in, out)
 }

@@ -36,7 +36,7 @@ func (app *App) init() (application *App, err error) {
 func (app *App) initializeWebService() (*App, error) {
 	config := utils.GetConfig()
 	service := micro.NewService(
-		micro.Name(config.ServiceNames.AttendanceServer),
+		micro.Name(config.ServiceNames.PhysiqueServer),
 		micro.RegisterTTL(config.ServiceMeta.GetRegistryTTL()),
 		micro.RegisterInterval(config.ServiceMeta.GetRegistryHeartbeat()),
 		micro.Version(config.ServiceMeta.GetVersion()),
