@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package dongfeng.svc.physique.server;
+import "github.com/ilovelili/dongfeng-protobuf/dongfeng.proto";
+
+// api
+service api {
+    rpc GetPhysique(dongfeng.protobuf.GetPhysiqueRequest) returns(dongfeng.protobuf.GetPhysiqueResponse) {};
+    rpc UpdatePhysique(dongfeng.protobuf.UpdatePhysiqueRequest) returns(dongfeng.protobuf.UpdatePhysiqueResponse) {};
+}
