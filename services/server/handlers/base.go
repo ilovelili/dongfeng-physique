@@ -24,7 +24,7 @@ func (f *Facade) syslog(notification *notification.Notification) {
 			CustomCode: notification.CustomCode,
 			Details:    notification.Details,
 			Link:       notification.Link,
-			CategoryId: int64(notification.CategoryID),
+			CategoryId: notification.CategoryID,
 		})
 	}()
 }
