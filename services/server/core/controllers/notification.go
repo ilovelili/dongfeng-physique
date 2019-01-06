@@ -1,28 +1,28 @@
 package controllers
 
 import (
-	"github.com/ilovelili/dongfeng-physique/services/server/core/models"
-	"github.com/ilovelili/dongfeng-physique/services/server/core/repositories"
+	"github.com/ilovelili/dongfeng-physique/services/server/core/clients"
+	proto "github.com/ilovelili/dongfeng-protobuf"
 )
 
 // NotificationController notification controller
 type NotificationController struct {
-	repository *repositories.NotificationRepository
+	client *clients.Client
 }
 
 // NewNotificationController new controller
 func NewNotificationController() *NotificationController {
 	return &NotificationController{
-		repository: repositories.NewNotificationRepository(),
+		client: clients.New(),
 	}
 }
 
-// GetNotifications get Notifications
-func (c *NotificationController) GetNotifications(uid string, adminonly bool) ([]*models.Notification, error) {
-	return c.repository.SelectNotifications(uid, adminonly)
-}
-
 // Save save Notifications
-func (c *NotificationController) Save(notification *models.Notification) error {
-	return c.repository.Insert(notification)
+func (c *NotificationController) Save(notification *proto.Notification) error {
+	req := &proto.SaveNotificationRequest{
+		Notification: notification,
+	}
+
+	_, err := c.client.SaveNotification(req)
+	return err
 }

@@ -85,6 +85,7 @@ type Services struct {
 // ServiceNames servicename config
 type ServiceNames struct {
 	PhysiqueServer string `json:"physique_server"`
+	CoreServer     string `json:"core_server"`
 }
 
 // ServiceMeta service meta data including service discovery specs

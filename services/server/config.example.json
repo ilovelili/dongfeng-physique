@@ -13,7 +13,8 @@
         }   
     },
     "servicenames": {
-        "physique_server": "dongfeng.svc.physique.server.api"
+        "physique_server": "dongfeng.svc.physique.server.api",
+        "core_server": "dongfeng.svc.core.server.api"
     },
     "servicemeta": {
         "registry_ttl": 30,

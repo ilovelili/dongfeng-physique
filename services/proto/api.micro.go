@@ -26,7 +26,7 @@ import (
 var _ = proto.Marshal
 var _ = fmt.Errorf
 var _ = math.Inf
-var _ = dongfeng_protobuf.UpdatePhysiqueResponse{}
+var _ = dongfeng_protobuf.SaveNotificationResponse{}
 
 // This is a compile-time assertion to ensure that this generated file
 // is compatible with the proto package it is being compiled against.
@@ -44,6 +44,7 @@ var _ server.Option
 type ApiService interface {
 	GetPhysique(ctx context.Context, in *dongfeng_protobuf.GetPhysiqueRequest, opts ...client.CallOption) (*dongfeng_protobuf.GetPhysiqueResponse, error)
 	UpdatePhysique(ctx context.Context, in *dongfeng_protobuf.UpdatePhysiqueRequest, opts ...client.CallOption) (*dongfeng_protobuf.UpdatePhysiqueResponse, error)
+	SaveNotification(ctx context.Context, in *dongfeng_protobuf.SaveNotificationRequest, opts ...client.CallOption) (*dongfeng_protobuf.SaveNotificationResponse, error)
 }
 
 type apiService struct {
@@ -84,17 +85,29 @@ func (c *apiService) UpdatePhysique(ctx context.Context, in *dongfeng_protobuf.U
 	return out, nil
 }
 
+func (c *apiService) SaveNotification(ctx context.Context, in *dongfeng_protobuf.SaveNotificationRequest, opts ...client.CallOption) (*dongfeng_protobuf.SaveNotificationResponse, error) {
+	req := c.c.NewRequest(c.name, "Api.SaveNotification", in)
+	out := new(dongfeng_protobuf.SaveNotificationResponse)
+	err := c.c.Call(ctx, req, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // Server API for Api service
 
 type ApiHandler interface {
 	GetPhysique(context.Context, *dongfeng_protobuf.GetPhysiqueRequest, *dongfeng_protobuf.GetPhysiqueResponse) error
 	UpdatePhysique(context.Context, *dongfeng_protobuf.UpdatePhysiqueRequest, *dongfeng_protobuf.UpdatePhysiqueResponse) error
+	SaveNotification(context.Context, *dongfeng_protobuf.SaveNotificationRequest, *dongfeng_protobuf.SaveNotificationResponse) error
 }
 
 func RegisterApiHandler(s server.Server, hdlr ApiHandler, opts ...server.HandlerOption) {
 	type api interface {
 		GetPhysique(ctx context.Context, in *dongfeng_protobuf.GetPhysiqueRequest, out *dongfeng_protobuf.GetPhysiqueResponse) error
 		UpdatePhysique(ctx context.Context, in *dongfeng_protobuf.UpdatePhysiqueRequest, out *dongfeng_protobuf.UpdatePhysiqueResponse) error
+		SaveNotification(ctx context.Context, in *dongfeng_protobuf.SaveNotificationRequest, out *dongfeng_protobuf.SaveNotificationResponse) error
 	}
 	type Api struct {
 		api
@@ -113,4 +126,8 @@ func (h *apiHandler) GetPhysique(ctx context.Context, in *dongfeng_protobuf.GetP
 
 func (h *apiHandler) UpdatePhysique(ctx context.Context, in *dongfeng_protobuf.UpdatePhysiqueRequest, out *dongfeng_protobuf.UpdatePhysiqueResponse) error {
 	return h.ApiHandler.UpdatePhysique(ctx, in, out)
+}
+
+func (h *apiHandler) SaveNotification(ctx context.Context, in *dongfeng_protobuf.SaveNotificationRequest, out *dongfeng_protobuf.SaveNotificationResponse) error {
+	return h.ApiHandler.SaveNotification(ctx, in, out)
 }

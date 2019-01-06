@@ -4,7 +4,7 @@ package handlers
 import (
 	notification "github.com/ilovelili/dongfeng-notification"
 	"github.com/ilovelili/dongfeng-physique/services/server/core/controllers"
-	"github.com/ilovelili/dongfeng-physique/services/server/core/models"
+	proto "github.com/ilovelili/dongfeng-protobuf"
 )
 
 // Facade api facade
@@ -19,13 +19,12 @@ func NewFacade() *Facade {
 func (f *Facade) syslog(notification *notification.Notification) {
 	go func() {
 		notificationcontroller := controllers.NewNotificationController()
-		notificationcontroller.Save(&models.Notification{
-			UserID:     notification.UserID,
+		notificationcontroller.Save(&proto.Notification{
+			UserId:     notification.UserID,
 			CustomCode: notification.CustomCode,
 			Details:    notification.Details,
 			Link:       notification.Link,
-			CategoryID: notification.CategoryID,
-			Time:       notification.Time,
+			CategoryId: int64(notification.CategoryID),
 		})
 	}()
 }

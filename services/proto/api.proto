@@ -7,4 +7,5 @@ import "github.com/ilovelili/dongfeng-protobuf/dongfeng.proto";
 service api {
     rpc GetPhysique(dongfeng.protobuf.GetPhysiqueRequest) returns(dongfeng.protobuf.GetPhysiqueResponse) {};
     rpc UpdatePhysique(dongfeng.protobuf.UpdatePhysiqueRequest) returns(dongfeng.protobuf.UpdatePhysiqueResponse) {};
+    rpc SaveNotification(dongfeng.protobuf.SaveNotificationRequest) returns(dongfeng.protobuf.SaveNotificationResponse) {};
 }
