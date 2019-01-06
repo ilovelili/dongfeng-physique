@@ -1,17 +1,9 @@
 package controllers
 
-import (
-	"github.com/ilovelili/dongfeng-physique/services/server/core/repositories"
-)
-
 // PhysiqueController notification controller
-type PhysiqueController struct {
-	repository *repositories.NotificationRepository
-}
+type PhysiqueController struct{}
 
 // NewPhysiqueController new controller
 func NewPhysiqueController() *PhysiqueController {
-	return &PhysiqueController{
-		repository: repositories.NewNotificationRepository(),
-	}
+	return new(PhysiqueController)
 }
