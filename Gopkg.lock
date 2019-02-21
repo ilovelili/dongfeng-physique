@@ -2,6 +2,12 @@
 
 
 [[projects]]
+  branch = "master"
+  name = "github.com/armon/go-metrics"
+  packages = ["."]
+  revision = "f0300d1749da6fa982027e449ec0c7a145510c3c"
+
+[[projects]]
   name = "github.com/go-log/log"
   packages = [".","log"]
   revision = "37e2e1f19306361e1fc152a1839f1236149cb4e4"
@@ -17,7 +23,7 @@
   branch = "master"
   name = "github.com/golang/protobuf"
   packages = ["proto"]
-  revision = "1d3f30b51784bec5aad268e59fd3c2fc1c2fe73f"
+  revision = "c823c79ea1570fb5ff454033735a8e68575d1d0f"
 
 [[projects]]
   name = "github.com/google/uuid"
@@ -28,8 +34,8 @@
 [[projects]]
   name = "github.com/hashicorp/consul"
   packages = ["api","watch"]
-  revision = "0bddfa23a2ebe3c0773d917fc104f53d74f7a5ec"
-  version = "v1.4.0"
+  revision = "c97c712e96e0e53308054d5e1180289fe02dce38"
+  version = "v1.4.2"
 
 [[projects]]
   name = "github.com/hashicorp/go-cleanhttp"
@@ -38,40 +44,52 @@
   version = "v0.5.0"
 
 [[projects]]
-  branch = "master"
+  name = "github.com/hashicorp/go-immutable-radix"
+  packages = ["."]
+  revision = "27df80928bb34bb1b0d6d0e01b9e679902e7a6b5"
+  version = "v1.0.0"
+
+[[projects]]
   name = "github.com/hashicorp/go-rootcerts"
   packages = ["."]
-  revision = "6bb64b370b90e7ef1fa532be9e591a81c3493e00"
+  revision = "63503fb4e1eca22f9ae0f90b49c5d5538a0e87eb"
+  version = "v1.0.0"
+
+[[projects]]
+  name = "github.com/hashicorp/golang-lru"
+  packages = ["simplelru"]
+  revision = "20f1fb78b0740ba8c3cb143a61e86ba5c8669768"
+  version = "v0.5.0"
 
 [[projects]]
   name = "github.com/hashicorp/serf"
   packages = ["coordinate"]
-  revision = "d6574a5bb1226678d7010325fb6c985db20ee458"
-  version = "v0.8.1"
+  revision = "b89a09ebd4b1b570e0076d5097272e67c10ac4f6"
+  version = "v0.8.2"
 
 [[projects]]
   branch = "master"
   name = "github.com/ilovelili/dongfeng-error-code"
   packages = ["."]
-  revision = "5d20c5ae268dac9840c0f9b9b97daeb0afc01a8d"
+  revision = "9c072b892d42ff1ef10e885a680448e3781819d4"
 
 [[projects]]
   branch = "master"
   name = "github.com/ilovelili/dongfeng-logger"
   packages = ["."]
-  revision = "17d3a5464f0dcf3e152dc32971687cf514486a52"
+  revision = "d26a6184d0e2064306a4ccf4c1e678ab25fd81e5"
 
 [[projects]]
   branch = "master"
   name = "github.com/ilovelili/dongfeng-notification"
   packages = ["."]
-  revision = "dd6875889f5e2bc01cc1277552cf6d2e4e545e46"
+  revision = "bf9177be2dd1aef21f3acf7d13288e74912c5044"
 
 [[projects]]
   branch = "master"
   name = "github.com/ilovelili/dongfeng-protobuf"
   packages = ["."]
-  revision = "63c951b2c8620e1d689ff0ffa9a1c70e997cc550"
+  revision = "8a2b0e47f00175fe1359e74e2319fe35637307ec"
 
 [[projects]]
   name = "github.com/konsorten/go-windows-terminal-sequences"
@@ -80,16 +98,16 @@
   version = "v1.0.1"
 
 [[projects]]
-  branch = "master"
   name = "github.com/micro/cli"
   packages = ["."]
-  revision = "1b0c9793c30063c75054ac3a245ef8f7f5154229"
+  revision = "bef92b8564e931cfd32870e52be76880ce358235"
+  version = "v0.1.0"
 
 [[projects]]
-  branch = "master"
   name = "github.com/micro/go-log"
   packages = ["."]
-  revision = "cbfa9447f9b655f8e66583237e51f40ca9bff860"
+  revision = "5cb7bb4413f4ae8de0d7e826aa2854861d3a6c31"
+  version = "v0.1.0"
 
 [[projects]]
   name = "github.com/micro/go-micro"
@@ -104,10 +122,10 @@
   version = "v0.16.2"
 
 [[projects]]
-  branch = "master"
   name = "github.com/micro/go-rcache"
   packages = ["."]
-  revision = "a581a57b513351792b9f21fc8b95d87b1c5a95da"
+  revision = "c795e0972a7eb6ca2ae1098371028d168870d7d0"
+  version = "v0.2.1"
 
 [[projects]]
   name = "github.com/micro/h2c"
@@ -116,28 +134,28 @@
   version = "v1.0.0"
 
 [[projects]]
-  branch = "master"
   name = "github.com/micro/mdns"
   packages = ["."]
-  revision = "9c3770d4057a5adca108c15ca317fee54766f9f7"
+  revision = "3a29b6675e7404722eed4d4dde532c2e103007a7"
+  version = "v0.1.0"
 
 [[projects]]
-  branch = "master"
   name = "github.com/micro/util"
   packages = ["go/lib/addr","go/lib/net","go/lib/tls"]
-  revision = "2d4f591dc5383712927e372348c0885478402595"
+  revision = "77fba40c3c49cc7f12e111d3901a9a710a1854c1"
+  version = "v0.1.0"
 
 [[projects]]
   name = "github.com/miekg/dns"
   packages = ["."]
-  revision = "44a8c5f8ba7d0b3eac116182736dcfb5885ee405"
-  version = "v1.1.2"
+  revision = "8fc2e5773bbd308ca2fcc962fd8d25c1bd0f6743"
+  version = "v1.1.4"
 
 [[projects]]
   name = "github.com/mitchellh/go-homedir"
   packages = ["."]
-  revision = "ae18d6b8b3205b561c79e8e5f69bff09736185f4"
-  version = "v1.0.0"
+  revision = "af06845cf3004701891bf4fdb884bfe4920b3727"
+  version = "v1.1.0"
 
 [[projects]]
   name = "github.com/mitchellh/hashstructure"
@@ -173,19 +191,19 @@
   branch = "master"
   name = "golang.org/x/crypto"
   packages = ["ed25519","ed25519/internal/edwards25519","ssh/terminal"]
-  revision = "ff983b9c42bc9fbf91556e191cc8efb585c16908"
+  revision = "a4c6cb3142f211c99e4bf4cd769535b29a9b616f"
 
 [[projects]]
   branch = "master"
   name = "golang.org/x/net"
   packages = ["bpf","http/httpguts","http2","http2/hpack","idna","internal/iana","internal/socket","ipv4","ipv6"]
-  revision = "927f97764cc334a6575f4b7a1584a147864d5723"
+  revision = "3a22650c66bd7f4fb6d1e8072ffd7b75c8a27898"
 
 [[projects]]
   branch = "master"
   name = "golang.org/x/sys"
   packages = ["unix","windows"]
-  revision = "badf5585203e739f88c2c6cd34188a6f54b5d619"
+  revision = "b4e8571b14e03cc164df06f72b640ebce3899579"
 
 [[projects]]
   name = "golang.org/x/text"
